@@ -1,0 +1,150 @@
+.gridContainer {
+    height: 85vh;
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "Foto Header"
+    "Foto repositories"
+    "Foto repositories"
+    "Foto repositories"
+    "Foto repositories"
+    "Pagination Pagination";
+}
+
+.Foto {
+    grid-area: Foto;
+}
+
+.Foto .userImg {
+    border-radius: 50%;
+    width: 68%;
+    margin-top: 55px;
+    margin-right: 12px;
+}
+
+.Foto a {
+    color: #0064eb;
+    text-decoration: none;
+}
+
+.Foto span img {
+    width: 1em;
+}
+
+.Foto .followingBlock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Foto .userName {
+    margin-left: 27px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.followingBlock span {
+    display: flex;
+}
+
+.followingBlock span img {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.Header {
+    grid-area: Header;
+    text-align: left;
+    align-self: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+
+.repositories {
+    grid-area: repositories;
+}
+
+.repositoriesBlock {
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    margin-right: 30px;
+}
+
+.repositoriesBlock + .repositoriesBlock {
+    margin-top: 15px;
+}
+
+.repositoriesBlock a {
+    text-decoration: none;
+    color: #0064eb;
+}
+
+/*.Pagination {*/
+/*    grid-area: Pagination;*/
+/*    height: 5vh;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: nowrap;*/
+/*    align-content: center;*/
+/*    justify-content: flex-end;*/
+/*    align-items: center;*/
+/*    margin-right: 10%;*/
+/*    color: #878787;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.Pagination ul {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.Pagination li {*/
+/*    list-style: none;*/
+/*}*/
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    font-size: larger;
+    border: none;
+    background-color: #f9f9f9;
+    color: #0064eb;
+    cursor: pointer;
+}
+
+.paginationElement {
+    color: #878787;
+    margin: 10px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.selectedPage {
+    color: white;
+    background-color: #0064eb;
+    padding: 5px;
+    width: 20px;
+    border-radius: 5px;
+    font-size: large;
+}
+
+.disabledArrow a{
+    color: #b7b7b7;
+}

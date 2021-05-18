@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import {store} from "./app/store";
+import {HashRouter} from 'react-router-dom';
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <App/>
+            <HashRouter basename={''}>
+                <App/>
+            </HashRouter>
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')

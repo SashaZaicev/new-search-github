@@ -1,0 +1,48 @@
+.Pagination {
+    grid-area: Pagination;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10%;
+    color: #878787;
+    margin-top: 10px;
+}
+
+.paginationElement {
+    color: #878787;
+    margin: 10px;
+    font-size: large;
+    cursor: pointer;
+    border: none;
+    background-color: #f9f9f9;
+}
+
+.selectedPage {
+    color: white;
+    background-color: #0064eb;
+    padding: 5px;
+    width: 30px;
+    border-radius: 5px;
+    font-size: large;
+    border: none;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    font-size: larger;
+    border: none;
+    background-color: #f9f9f9;
+    color: #0064eb;
+    cursor: pointer;
+}
+
+.arrow:disabled {
+    color: #b7b7b7;
+}
