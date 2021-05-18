@@ -1,4 +1,4 @@
-import React, {CSSProperties, ReactNode, useState} from 'react';
+import React, {CSSProperties, ReactNode} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../app/store";
 import s from "../Pagination/MyPagination.module.css";

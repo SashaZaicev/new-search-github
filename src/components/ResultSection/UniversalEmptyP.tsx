@@ -1,9 +1,5 @@
 import React from 'react';
 import s from "./Result.module.css";
-import {Redirect} from "react-router-dom";
-import {PATH} from "../routes/Routes";
-import {useSelector} from "react-redux";
-import {AppRootStateType} from "../../app/store";
 
 type UniversalPropsType = {
     image?: string,

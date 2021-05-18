@@ -6,7 +6,7 @@ import SearchForm from "./searchForm";
 const Header = () => {
     return (
         <div className={s.header}>
-            <div><img src={logo}/></div>
+            <div><img src={logo} alt={'logo'}/></div>
             <div className={s.searchForm}><SearchForm/></div>
         </div>)
 }
