@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/new-search-github/static/css/main.10cf59c3.chunk.css",
-    "main.js": "/new-search-github/static/js/main.bf70e8f2.chunk.js",
-    "main.js.map": "/new-search-github/static/js/main.bf70e8f2.chunk.js.map",
+    "main.css": "/new-search-github/static/css/main.940bf844.chunk.css",
+    "main.js": "/new-search-github/static/js/main.1201b437.chunk.js",
+    "main.js.map": "/new-search-github/static/js/main.1201b437.chunk.js.map",
     "runtime-main.js": "/new-search-github/static/js/runtime-main.9674ac59.js",
     "runtime-main.js.map": "/new-search-github/static/js/runtime-main.9674ac59.js.map",
-    "static/js/2.f251f33c.chunk.js": "/new-search-github/static/js/2.f251f33c.chunk.js",
-    "static/js/2.f251f33c.chunk.js.map": "/new-search-github/static/js/2.f251f33c.chunk.js.map",
+    "static/js/2.85f86746.chunk.js": "/new-search-github/static/js/2.85f86746.chunk.js",
+    "static/js/2.85f86746.chunk.js.map": "/new-search-github/static/js/2.85f86746.chunk.js.map",
     "static/js/3.bcd35010.chunk.js": "/new-search-github/static/js/3.bcd35010.chunk.js",
     "static/js/3.bcd35010.chunk.js.map": "/new-search-github/static/js/3.bcd35010.chunk.js.map",
     "index.html": "/new-search-github/index.html",
-    "static/css/main.10cf59c3.chunk.css.map": "/new-search-github/static/css/main.10cf59c3.chunk.css.map",
-    "static/js/2.f251f33c.chunk.js.LICENSE.txt": "/new-search-github/static/js/2.f251f33c.chunk.js.LICENSE.txt",
+    "static/css/main.940bf844.chunk.css.map": "/new-search-github/static/css/main.940bf844.chunk.css.map",
+    "static/js/2.85f86746.chunk.js.LICENSE.txt": "/new-search-github/static/js/2.85f86746.chunk.js.LICENSE.txt",
+    "static/media/loader.f8752710.svg": "/new-search-github/static/media/loader.f8752710.svg",
     "static/media/logo.e09cf6e4.svg": "/new-search-github/static/media/logo.e09cf6e4.svg",
     "static/media/notFound.6b254376.svg": "/new-search-github/static/media/notFound.6b254376.svg",
     "static/media/repListEmpty.f5075737.svg": "/new-search-github/static/media/repListEmpty.f5075737.svg",
@@ -20,8 +21,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.9674ac59.js",
-    "static/js/2.f251f33c.chunk.js",
-    "static/css/main.10cf59c3.chunk.css",
-    "static/js/main.bf70e8f2.chunk.js"
+    "static/js/2.85f86746.chunk.js",
+    "static/css/main.940bf844.chunk.css",
+    "static/js/main.1201b437.chunk.js"
   ]
 }
