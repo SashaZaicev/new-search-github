@@ -12,6 +12,13 @@
     margin-top: 10px;
 }
 
+.paginationBlock {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
 .paginationElement {
     color: #878787;
     margin: 10px;
