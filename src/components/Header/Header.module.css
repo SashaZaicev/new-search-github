@@ -53,12 +53,8 @@ img.searchIcon + input {
     padding-left: 40px;
 }
 
-/*.header audio {*/
-/*    height: 30px;*/
-/*}*/
-/*.loginBlock {*/
-/*    float: right;*/
-/*}*/
-/*.loginBlock a {*/
-/*    color: white;*/
-/*}*/
+@media screen and (max-width: 500px) {
+    .searchForm input {
+        width: 60%;
+    }
+}

@@ -6,6 +6,7 @@ import UniversalEmptyP from "./UniversalEmptyP";
 import SuccessPage from "./SuccessPage";
 import {actionsUser, getUserTC} from "../../bll/profileReducer";
 import {AppRootStateType} from "../../app/store";
+import Preloader from "./preloader/Preloader";
 
 const Result = () => {
     const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const Result = () => {
     }
     return (
         <div className={s.resultContainer}>
+            {paginationState.preLoader ? <Preloader/> : null}
             <div className={s.result}>
                 {resUser ?
                     (

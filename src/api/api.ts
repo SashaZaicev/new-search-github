@@ -6,7 +6,7 @@ const instance = axios.create({
 });
 
 export const userAPI = {
-    getUser(user: string) {debugger
+    getUser(user: string) {
         return instance.get(`users/${user}`)
     },
     getRepositories(user:string, page:number, per_page:number) {

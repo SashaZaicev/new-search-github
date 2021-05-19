@@ -19,7 +19,7 @@ const Repositories: React.FC<RepositoriesPropsType> = ({
         )
     })
     return (
-        <div>
+        <div className={s.HeaderBlock}>
             <div className={s.Header}>
                 <div>Repositories ({resUser.public_repos})</div>
             </div>

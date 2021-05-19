@@ -93,30 +93,6 @@
     color: #0064eb;
 }
 
-/*.Pagination {*/
-/*    grid-area: Pagination;*/
-/*    height: 5vh;*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    flex-wrap: nowrap;*/
-/*    align-content: center;*/
-/*    justify-content: flex-end;*/
-/*    align-items: center;*/
-/*    margin-right: 10%;*/
-/*    color: #878787;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*.Pagination ul {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.Pagination li {*/
-/*    list-style: none;*/
-/*}*/
-
 .arrow {
     width: 30px;
     height: 30px;
@@ -145,6 +121,33 @@
     font-size: large;
 }
 
-.disabledArrow a{
+.disabledArrow a {
     color: #b7b7b7;
+}
+
+@media screen and (max-width: 500px) {
+    .gridContainer {
+        height: 85vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Foto .userName {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .HeaderBlock {
+        align-self: center;
+    }
+
+    .repositoriesBlock {
+        align-items: center;
+    }
+    .paginationBlock {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
 }

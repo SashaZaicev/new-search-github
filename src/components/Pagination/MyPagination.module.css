@@ -46,3 +46,15 @@
 .arrow:disabled {
     color: #b7b7b7;
 }
+
+@media screen and (max-width: 500px) {
+    .Pagination {
+        height: 46vh;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .arrow {
+        display: none;
+    }
+}

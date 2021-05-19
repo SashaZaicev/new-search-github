@@ -46,15 +46,15 @@ const Pagination: React.FC<IPaginationProps> = (
         </button>
     ));
 
-    if ((page + 4) < lastPage) {
+    if ((page + 3) < lastPage) {
         pages[page + 2] = (
             <span key={page + 3}>
                 ...
             </span>
         );
-        pages = pages.filter((p, i) => i < (page + 3) || i === (lastPage - 1));
+        pages = pages.filter((p, i) => i < (page + 2) || i === (lastPage - 1));
     }
-    if (page > 4) {
+    if (page > 2) {
         pages[1] = (
             <span key={2}>
                 ...
@@ -102,7 +102,7 @@ const newV =paginationState.endElement
             {/*    <option value={20}>20</option>*/}
             {/*    <option value={50}>50</option>*/}
             {/*</select>*/}
-            <div style={{
+            <div className={s.paginationBlock}><div style={{
                 marginLeft: '5px',
                 marginRight: '5px',
                 display: 'flex'
@@ -123,6 +123,7 @@ const newV =paginationState.endElement
                     nextPage()
                 }}>{'>'}</button>}
             </div>
+        </div>
         </div>
     );
 };
