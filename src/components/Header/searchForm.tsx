@@ -2,7 +2,7 @@ import React from 'react';
 import {getUserTC} from "../../bll/profileReducer";
 import {useDispatch, useSelector} from "react-redux";
 import search from "../../img/search.svg"
-import s from "./Header.module.css"
+import s from "./Header.module.scss"
 import {AppRootStateType} from "../../app/store";
 
 const SearchForm = () => {

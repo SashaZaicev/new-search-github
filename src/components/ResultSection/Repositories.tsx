@@ -1,15 +1,24 @@
 import React from 'react';
-import s from "./SuccessPage.module.css";
+import { resUser } from './SuccessPage';
+import s from "./SuccessPage.module.scss";
 
 type RepositoriesPropsType = {
-    resRepositories: Array<any>,
-    resUser: any,
+    resRepositories: Array<resRepositoriesType>,
+    resUser: resUser
 }
+
+export interface resRepositoriesType {
+    name: string,
+    html_url: string,
+    description: string
+}
+
+
 const Repositories: React.FC<RepositoriesPropsType> = ({
                                                            resRepositories,
                                                            resUser
                                                        }) => {
-    const listRepositories = resRepositories.map((el) => {
+    const listRepositories = resRepositories.map((el: resRepositoriesType) => {
         return (
             <div key={el + el.name} className={s.repositoriesBlock}>
                 <a target="_blank" rel={'noreferrer'} href={el.html_url}>{el.name}</a>

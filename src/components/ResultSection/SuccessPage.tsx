@@ -1,21 +1,38 @@
 import React from 'react';
-import s from './SuccessPage.module.css'
+import s from './SuccessPage.module.scss'
 import followers from "../../img/users.svg"
 import follower from "../../img/notFound.svg"
 import {useSelector} from "react-redux";
 import repListEmpty from "../../img/repListEmpty.svg";
 
 import {AppRootStateType} from "../../app/store";
-import Repositories from "./Repositories";
+import Repositories, {resRepositoriesType} from "./Repositories";
 import UniversalEmptyP from "./UniversalEmptyP";
 import Pagination from "../Pagination/Pagination";
 
 type SuccessPropsType = {
     userName: string,
-    resUser: any
-    resRepositories: Array<{}>,
+    resUser: resUser
+    resRepositories: Array<resRepositoriesType>,
     paginationState: {}
     onPageChanged: (pageNumber: number) => void
+}
+
+export interface resUser {
+    avatar_url: string
+    html_url: string
+    login: string
+    followers: number
+    following: number
+    public_repos: number
+    name:string
+}
+
+interface paginationStateType {
+    page: number
+    per_page: number
+    portionSize: number
+    preLoader: boolean
 }
 
 const SuccessPage: React.FC<SuccessPropsType> = ({
@@ -24,14 +41,13 @@ const SuccessPage: React.FC<SuccessPropsType> = ({
                                                      resRepositories,
                                                      onPageChanged
                                                  }) => {
-    const paginationState = useSelector((state: AppRootStateType) => state.profile)
+    const paginationState = useSelector((state: AppRootStateType): paginationStateType => state.profile)
 
     const repListEmptyPage = 'Repository list is empty'
-
     return (
         <div className={s.gridContainer}>
             <div className={s.Foto}>
-                <a href={resUser.html_url}><img className={s.userImg} src={resUser.avatar_url} alt=""/></a>
+                <img className={s.userImg} src={resUser.avatar_url} alt=""/>
                 <div className={s.userName}><h3>{userName}</h3>
                     <div><a href={resUser.html_url} rel={'noreferrer'} target="_blank">{resUser.login}</a></div>
                 </div>
@@ -40,13 +56,13 @@ const SuccessPage: React.FC<SuccessPropsType> = ({
                     <span><img src={follower} alt=""/>{resUser.following} following</span>
                 </div>
             </div>
-            {resRepositories
+            {resRepositories.length !== 0
                 ?
                 <Repositories resRepositories={resRepositories} resUser={resUser}/>
                 :
                 <UniversalEmptyP
-                text={repListEmptyPage}
-                image={repListEmpty}
+                    text={repListEmptyPage}
+                    image={repListEmpty}
                 />}
             <Pagination page={paginationState.page}
                         pageCount={paginationState.per_page}

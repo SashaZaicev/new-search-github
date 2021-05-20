@@ -1,7 +1,7 @@
 import React, {CSSProperties, ReactNode} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../app/store";
-import s from "../Pagination/MyPagination.module.css";
+import s from "./MyPagination.module.scss";
 import {actionsUser} from "../../bll/profileReducer";
 
 interface IPaginationProps {
@@ -10,10 +10,23 @@ interface IPaginationProps {
     productTotalCount: number;
     getPage: (newPage: number, newPageCount: number) => void;
 
+
     title?: ReactNode;
     paginationStyle?: CSSProperties;
     buttonStyle?: CSSProperties;
     selectStyle?: CSSProperties;
+}
+
+interface paginationStateType {
+    user: userType
+    per_page: number
+    startElement: number
+    endElement: number
+
+}
+
+interface userType {
+    public_repos: number
 }
 
 const Pagination: React.FC<IPaginationProps> = (
@@ -26,12 +39,12 @@ const Pagination: React.FC<IPaginationProps> = (
 ) => {
     let pages = [];
     const dispatch = useDispatch();
-    const paginationState = useSelector((state: AppRootStateType) => state.profile)
+    const paginationState = useSelector<AppRootStateType, paginationStateType>(state => state.profile)
 
     let lastPage = Math.ceil(paginationState.user.public_repos
         / paginationState.per_page);
 
-    const getPages = (i:number, pageCount:number) => {
+    const getPages = (i: number, pageCount: number) => {
         getPage(i, pageCount)
 
 
@@ -66,22 +79,13 @@ const Pagination: React.FC<IPaginationProps> = (
         getPage(page - 1, pageCount);
         dispatch(actionsUser.setStart(paginationState.startElement - 4))
         dispatch(actionsUser.setEnd(paginationState.endElement - 4))
-
-        // if ((currentPage - 1) % pageNumberLimit == 0) {
-        //     setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
-        //     setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
-        // }
     }
     const nextPage = () => {
         getPage(page + 1, pageCount);
         dispatch(actionsUser.setStart(paginationState.startElement + 4))
         dispatch(actionsUser.setEnd(paginationState.endElement + 4))
-        // if (currentPage + 1 > maxPageNumberLimit) {
-        //     setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
-        //     setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
-        // }
     }
-const newV =paginationState.endElement
+    const newV = paginationState.endElement
 
     return (
         <div className={s.Pagination}>
@@ -90,40 +94,29 @@ const newV =paginationState.endElement
                 marginRight: '10px'
             }
             }>{`${paginationState.startElement} - ${newV}  of ${paginationState.user.public_repos} items`}</div>
-
-            {/*<select value={pageCount} onChange={e => getPage(page, Number(e.currentTarget.value))}*/}
-            {/*        style={{*/}
-            {/*            ...selectStyle,*/}
-            {/*            marginRight: '5px'*/}
-            {/*        }}>*/}
-            {/*    <option value={4}>4</option>*/}
-            {/*    <option value={7}>7</option>*/}
-            {/*    <option value={10}>10</option>*/}
-            {/*    <option value={20}>20</option>*/}
-            {/*    <option value={50}>50</option>*/}
-            {/*</select>*/}
-            <div className={s.paginationBlock}><div style={{
-                marginLeft: '5px',
-                marginRight: '5px',
-                display: 'flex'
-            }}>
-                {<button className={s.arrow} disabled={page <= 1} onClick={() => {
-                    prevPage()
+            <div className={s.paginationBlock}>
+                <div style={{
+                    marginLeft: '5px',
+                    marginRight: '5px',
+                    display: 'flex'
                 }}>
-                    {'<'}
-                </button>}
+                    {<button className={s.arrow} disabled={page <= 1} onClick={() => {
+                        prevPage()
+                    }}>
+                        {'<'}
+                    </button>}
+                </div>
+                {pages}
+                <div style={{
+                    marginLeft: '5px',
+                    marginRight: '5px',
+                    display: 'flex'
+                }}>
+                    {<button className={s.arrow} disabled={page >= lastPage} onClick={() => {
+                        nextPage()
+                    }}>{'>'}</button>}
+                </div>
             </div>
-            {pages}
-            <div style={{
-                marginLeft: '5px',
-                marginRight: '5px',
-                display: 'flex'
-            }}>
-                {<button className={s.arrow} disabled={page >= lastPage} onClick={() => {
-                    nextPage()
-                }}>{'>'}</button>}
-            </div>
-        </div>
         </div>
     );
 };

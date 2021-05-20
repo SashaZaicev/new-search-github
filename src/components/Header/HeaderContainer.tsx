@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from "./Header";
-import s from './Header.module.css'
+import s from './Header.module.scss'
 
 function HeaderContainer() {
     return (
